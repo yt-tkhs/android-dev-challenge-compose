@@ -27,37 +27,37 @@ import com.example.androiddevchallenge.ui.MyNavHost
 import com.example.androiddevchallenge.ui.theme.MyTheme
 
 class MainActivity : AppCompatActivity() {
-  override fun onCreate(savedInstanceState: Bundle?) {
-    super.onCreate(savedInstanceState)
-    setContent {
-      MyTheme {
-        MyApp()
-      }
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContent {
+            MyTheme {
+                MyApp()
+            }
+        }
     }
-  }
 }
 
 // Start building your app here!
 @Composable
 fun MyApp() {
-  val navController = rememberNavController()
-  Surface(color = MaterialTheme.colors.background) {
-    MyNavHost(navController = navController)
-  }
+    val navController = rememberNavController()
+    Surface(color = MaterialTheme.colors.background) {
+        MyNavHost(navController = navController)
+    }
 }
 
 @Preview("Light Theme", widthDp = 360, heightDp = 640)
 @Composable
 fun LightPreview() {
-  MyTheme {
-    MyApp()
-  }
+    MyTheme {
+        MyApp()
+    }
 }
 
 @Preview("Dark Theme", widthDp = 360, heightDp = 640)
 @Composable
 fun DarkPreview() {
-  MyTheme(darkTheme = true) {
-    MyApp()
-  }
+    MyTheme(darkTheme = true) {
+        MyApp()
+    }
 }
